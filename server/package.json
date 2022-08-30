@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "blog application",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1shan-pixel/100-_Days_of_Code.git"
+  },
+  "keywords": [
+    "mern",
+    "blogapp"
+  ],
+  "author": "Ishan Panta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1shan-pixel/100-_Days_of_Code/issues"
+  },
+  "homepage": "https://github.com/1shan-pixel/100-_Days_of_Code#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
