@@ -1,7 +1,8 @@
 import {useState} from 'react'; 
-
+import {API} from '../../services/api.js'; 
 //created a function type ko using arrow function , you better know the syntax 
 import {Box, TextField, Button, styled,Typography} from '@mui/material'; 
+import { signupUser } from '../../../../server/controller/user-controller';
  // this is how you import packages in react.js 
 
  const Component = styled(Box)`
@@ -71,8 +72,9 @@ const Login = () => {
     const onInputChange = (e) => {
         setSignup({...signup, [e.target.name]: e.target.value})
     }
-
-    
+    const signupUser = async ()=> {
+        let response = await API.userSignup(signup) 
+    }
     return(
        <Component> 
         < Image src = {imageURL}  alt = "sth"/>
@@ -91,7 +93,7 @@ const Login = () => {
                 <TextField variant = "standard" onChange = { (e)=> onInputChange(e)} name = 'name' label = "Full Name " />
                 <TextField variant = "standard" onChange = { (e)=> onInputChange(e)} name = 'username' label = "User Name " />
                 <TextField variant = "standard" onChange = { (e)=> onInputChange(e)} name = 'password' label = "Password"/>f
-                <LoginButton variant = "contained">SignUp </LoginButton> 
+                <LoginButton onClick = {() => signupUser()}variant = "contained">SignUp </LoginButton> 
                 <Typography style = {{textAlign: 'center'}}> Or</Typography>
                 <SignUpButton onClick = {()=> toggleSignUp()}>Already have an account?  </SignUpButton> 
             </Wrapper>
